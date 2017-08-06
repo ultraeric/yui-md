@@ -1,0 +1,66 @@
+{
+  "name": "yui-md",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "babel": {
+    "plugins": [
+      "transform-object-rest-spread",
+      [
+        "babel-plugin-webpack-alias",
+        {
+          "config": "./webpack.config.js"
+        }
+      ]
+    ],
+    "presets": [
+      "react",
+      "stage-3"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "babel src -d lib --copy-files",
+    "build": "npm run prepare && webpack",
+    "deploy": "npm run prepare && webpack -w && node server.js",
+    "watch": "babel -w src -d lib --copy-files"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "guac-hoc": "0.0.23",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-flexbox-grid": "^1.1.3",
+    "update": "^0.7.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-webpack-alias": "^2.1.2",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.23.0",
+    "babili-webpack-plugin": "^0.1.2",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "install": "^0.10.1",
+    "module-alias": "^2.0.1",
+    "node-sass": "^4.5.3",
+    "node-sass-import": "^1.1.1",
+    "npm": "^5.3.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-modules-values": "^1.3.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "uglify-es-webpack-plugin": "0.0.3",
+    "webpack": "^3.4.1",
+    "webpack-shell-plugin": "^0.5.0"
+  }
+}

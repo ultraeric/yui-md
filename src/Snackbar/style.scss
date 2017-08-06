@@ -1,0 +1,46 @@
+.snackbar {
+  @include side-padding(24px);
+  position: fixed;
+  z-index: 9999;
+  height: 48px;
+  line-height: 48px;
+  font-size: 15px;
+  top: 100vh;
+  min-width: 288px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  color: $text-color-light;
+  visibility: hidden;
+  background-color: #323232;
+  transition: all $standard-time $standard-transition-curve,
+              top $standard-time $accel-transition-curve,
+              visibility 0s $standard-transition-curve $standard-time;
+
+  @media #{$mobile-query} {
+    border: none;
+    border-radius: 0px;
+    box-sizing: border-box;
+    width: 100vw;
+    margin-left: 0px;
+  }
+}
+
+.snackbar.active {
+  top: calc(100vh - 48px);
+  visibility: visible;
+  transition: all $standard-time $standard-transition-curve,
+              top $standard-time $decel-transition-curve;
+}
+
+.snackbar-button {
+  @include side-padding(24px);
+  position: absolute;
+  margin: 0px;
+  height: 48px;
+  right: 0px;
+  color: $text-color-light;
+  .ripple-effect {
+    background-color: $text-color-light;
+  }
+}

@@ -1,0 +1,9 @@
+$card-action-padding: 8px !default;
+
+.card-container {
+  @extend .z-depth-1;
+  border-radius: 2px;
+  @include vertical-padding(24px);
+  @include side-padding(16px);
+  margin: 8px;
+}

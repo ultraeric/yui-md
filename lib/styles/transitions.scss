@@ -1,0 +1,19 @@
+$standard-transition-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+$accel-transition-curve: cubic-bezier(0.4, 0.0, 1, 1);
+$decel-transition-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
+$sharp-transition-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
+
+$standard-time: 0.3s;
+$standard-time-fast: $standard-time * 0.5;
+
+$s-transition-time: $standard-time;
+$m-transition-time: 1.3 * $s-transition-time;
+$l-transition-time: 1.5 * $s-transition-time;
+
+$s-entry-time: (225 / 300) * $s-transition-time;
+$m-entry-time: (225 / 300) * $m-transition-time;
+$l-entry-transition: (225 / 300) * $l-transition-time;
+
+$s-exit-time: (195 / 300) * $s-transition-time;
+$m-exit-time: (195 / 300) * $m-transition-time;
+$l-exit-time: (195 / 300) * $l-transition-time;

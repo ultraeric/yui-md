@@ -1,0 +1,28 @@
+.divider {
+  background-color: rgba($text-color-dark, 0.12);
+  padding: 0px;
+  margin: 0px;
+}
+
+.divider.horizontal {
+  @include vertical-margin($content-padding);
+  height: 1px;
+  width: 100%;
+}
+
+.divider.vertical {
+  @include side-margin($content-padding);
+  width: 1px;
+  height: 100%;
+  display: inline-block;
+}
+
+.divider.no-margin {
+  margin: 0px;
+}
+
+.divider.inset {
+  padding-left: 72px;
+  box-sizing: border-box;
+  width: 100%;
+}
