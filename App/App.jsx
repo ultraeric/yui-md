@@ -15,11 +15,9 @@ import Divider from '../lib/Divider';
 import AppBar from '../lib/AppBar';
 import Snackbar from '../lib/Snackbar';
 import {Row, Col, StickyFooter} from '../lib';
-import * as yuiMd from '../lib';
 
 class App extends React.Component {
   constructor() {
-    console.log(yuiMd);
 
     super();
     this.bindAllMethods();

@@ -3,7 +3,6 @@ import '../styles/style.scss';
 import {Guac} from 'guac-hoc/lib/Guac';
 import {applyRipple} from '../utils/applyRipple';
 import {Icon} from '../Icon';
-import {Menu, MenuWrapper} from '../Menu';
 
 /*
   Generic button, can have text/icon/pictures/etc.
