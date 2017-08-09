@@ -8,6 +8,7 @@ import '../styles/style.scss';
 /*
   Props:
   - noPadding <boolean>: unpadded content body.
+  - footerComponent <Component>
 */
 class Content extends React.PureComponent {
   constructor() {
@@ -87,20 +88,22 @@ class Content extends React.PureComponent {
     };
 
     let children = React.Children.toArray(this.props.children);
-    let footerElement = null;
+    let footerComponent = null;
     for (var index in children) {
       let childElement = children[index];
       if (childElement.type === StickyFooter) {
-        footerElement = children.splice(index, 1);
+        footerComponent = children.splice(index, 1);
       }
     }
+
+    footerComponent = footerComponent || this.props.footerComponent || null;
 
     return (
       <div {...passedProps}>
         <div className={this.contentContainerClassName()}>
-        {children}
-      </div>
-        {footerElement}
+          {children}
+        </div>
+        {footerComponent}
       </div>
     );
   }
