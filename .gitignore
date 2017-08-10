@@ -2,4 +2,3 @@ node_modules
 public/bundle.js
 env_setup
 sync.sh
-package-lock.json
