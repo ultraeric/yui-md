@@ -4,7 +4,11 @@ import Guac from 'guac-hoc/lib/Guac';
 
 const defaultDepth = 1;
 
-
+/*
+  Props:
+  - horizontal <boolean>: horizontal card
+  - vertical <boolean>: vertical card
+*/
 class Card extends React.Component {
   constructor() {
     super();
