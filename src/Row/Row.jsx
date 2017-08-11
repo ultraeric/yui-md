@@ -8,6 +8,7 @@ import Guac from 'guac-hoc/lib/Guac';
   -sm <int>: flex-size
   -md <int>: flex-size
   -lg <int>: flex-size
+  -reverse <string>: what size to reverse at, separated by spaces
 */
 class Row extends React.Component {
   constructor() {
@@ -21,6 +22,10 @@ class Row extends React.Component {
     className += typeof(this.props.sm) === 'number' ? ' row-sm-' + this.props.sm : '';
     className += typeof(this.props.md) === 'number' ? ' row-md-' + this.props.md : '';
     className += typeof(this.props.lg) === 'number' ? ' row-lg-' + this.props.lg : '';
+    let reverses = this.props.reverse ? this.props.reverse.split(' ') : [];
+    for (var reverse of reverses) {
+      className += reverse ? ' reverse-' + reverse : '';
+    }
     return className;
   }
 

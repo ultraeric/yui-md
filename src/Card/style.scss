@@ -16,7 +16,6 @@ $card-action-padding: 8px !default;
   .card-text-area {
     @extend .z-depth-1;
     box-sizing: border-box;
-    display: block;
     > * {
       @include vertical-margin(16px);
       @include side-margin(16px);

@@ -80,7 +80,7 @@ class Content extends React.PureComponent {
   }
 
   render() {
-    let passedProps = this.deleteUsedProps(['s', 'm', 'l', 'children']);
+    let passedProps = this.deleteUsedProps(['s', 'm', 'l', 'children', 'footerComponent']);
     passedProps = {
       ...passedProps,
       className: this.className(),
