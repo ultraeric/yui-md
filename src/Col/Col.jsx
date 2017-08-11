@@ -5,9 +5,10 @@ import Guac from 'guac-hoc/lib/Guac';
 /*
   Props:
   NOTE: 0 size will make the component invisible.
-  - s <int>: flex size for small components.
-  - m <int>: flex size for medium components.
-  - l <int>: flex size for large components.
+  -xs <int>: flex-size
+  -sm <int>: flex-size
+  -md <int>: flex-size
+  -lg <int>: flex-size
 */
 class Col extends React.Component {
   constructor() {
@@ -17,6 +18,7 @@ class Col extends React.Component {
 
   className() {
     let className = 'yui-md-grid-col';
+    className += typeof(this.props.xs) === 'number' ? ' col-xs-' + this.props.xs : '';
     className += typeof(this.props.sm) === 'number' ? ' col-sm-' + this.props.sm : '';
     className += typeof(this.props.md) === 'number' ? ' col-md-' + this.props.md : '';
     className += typeof(this.props.lg) === 'number' ? ' col-lg-' + this.props.lg : '';
@@ -24,7 +26,7 @@ class Col extends React.Component {
   }
 
   render() {
-    let passedProps = this.deleteUsedProps(['sm', 'md', 'lg']);
+    let passedProps = this.deleteUsedProps(['xs', 'sm', 'md', 'lg']);
     passedProps = {
       ...passedProps,
       className: this.className()

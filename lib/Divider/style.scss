@@ -7,22 +7,26 @@
 .divider.horizontal {
   @include vertical-margin($content-padding);
   height: 1px;
-  width: 100%;
 }
 
 .divider.vertical {
   @include side-margin($content-padding);
   width: 1px;
-  height: 100%;
+  height: inherit;
   display: inline-block;
 }
 
 .divider.no-margin {
   margin: 0px;
 }
+.divider.no-margin.vertical {
+  height: 100%;
+}
+.divider.no-margin.horizontal {
+  width: 100%;
+}
 
 .divider.inset {
   padding-left: 72px;
   box-sizing: border-box;
-  width: 100%;
 }

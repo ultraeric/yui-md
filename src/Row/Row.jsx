@@ -4,6 +4,7 @@ import Guac from 'guac-hoc/lib/Guac';
 
 /*
   Props:
+  -xs <int>: flex-size
   -sm <int>: flex-size
   -md <int>: flex-size
   -lg <int>: flex-size
@@ -16,6 +17,7 @@ class Row extends React.Component {
 
   className() {
     let className = 'yui-md-grid-row';
+    className += typeof(this.props.xs) === 'number' ? ' row-xs-' + this.props.xs : '';
     className += typeof(this.props.sm) === 'number' ? ' row-sm-' + this.props.sm : '';
     className += typeof(this.props.md) === 'number' ? ' row-md-' + this.props.md : '';
     className += typeof(this.props.lg) === 'number' ? ' row-lg-' + this.props.lg : '';
@@ -23,7 +25,7 @@ class Row extends React.Component {
   }
 
   render() {
-    let passedProps = this.deleteUsedProps(['sm', 'md', 'lg']);
+    let passedProps = this.deleteUsedProps(['xs', 'sm', 'md', 'lg']);
     passedProps = {
       ...passedProps,
       className: this.className()

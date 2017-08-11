@@ -12,13 +12,28 @@ body {
   min-height: $min-height;
   color: $text-color-dark;
   font-family: 'Roboto', sans-serif;
-  * {
-    clear: both;
-  }
+}
+
+img {
+  display: block;
 }
 
 html {
 
+}
+
+.header {
+  margin: 0px;
+  font-size: 24px;
+  font-weight: medium;
+  color: $text-color-dark;
+}
+
+.subheader {
+  margin: 0px;
+  font-size: 14px;
+  font-weight: medium;
+  color: rgba($text-color-dark, 0.54);
 }
 
 .nostyle-container {
