@@ -2,6 +2,10 @@
 
 .yui-md-grid-col, .yui-md-grid-row {
   box-sizing: border-box;
+  transition: none;
+  * {
+    transition: none;
+  }
 }
 
 $xs-grid-query: 'only screen and (max-width: 480px)';

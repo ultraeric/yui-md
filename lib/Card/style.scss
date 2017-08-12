@@ -8,6 +8,10 @@ $card-action-padding: 8px !default;
 
 .card-content, .card-content.card-container {
   overflow: hidden;
+  transition: none;
+  * {
+    transition: none;
+  }
   img {
     display:block;
     margin: 0px;
@@ -16,6 +20,10 @@ $card-action-padding: 8px !default;
   .card-text-area {
     @extend .z-depth-1;
     box-sizing: border-box;
+    transition: none;
+    * {
+      transition: none;
+    }
     > * {
       @include vertical-margin(16px);
       @include side-margin(16px);
