@@ -19,7 +19,10 @@ $card-action-padding: 8px !default;
     margin: 0px;
     padding: 0px;
     overflow: hidden;
-    img {
+    > :not(img) {
+      display: flex;
+    }
+    * {
       display: block;
       margin: 0px;
       padding: 0px;
