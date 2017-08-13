@@ -22,6 +22,10 @@ class Row extends React.Component {
     className += typeof(this.props.sm) === 'number' ? ' row-sm-' + this.props.sm : '';
     className += typeof(this.props.md) === 'number' ? ' row-md-' + this.props.md : '';
     className += typeof(this.props.lg) === 'number' ? ' row-lg-' + this.props.lg : '';
+    if (this.props.xs === 0 || this.props.sm === 0 ||
+        this.props.md === 0 || this.props.lg === 0) {
+          className += ' hidden-grid-element';
+        }
     let reverses = this.props.reverse ? this.props.reverse.split(' ') : [];
     for (var reverse of reverses) {
       className += reverse ? ' reverse-' + reverse : '';
