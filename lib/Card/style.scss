@@ -1,27 +1,40 @@
 $card-action-padding: 8px !default;
 
-.card-container {
+.card {
   @extend .z-depth-1;
   border-radius: 2px;
   margin: 8px;
 }
+.card-text-area, .card-image-area {
+  width: 100%;
+}
 
-.card-content, .card-content.card-container {
+.card-content, .card-content.card {
   overflow: hidden;
   transition: none;
   * {
     transition: none;
   }
-  img {
-    display:block;
+  .card-image-area{
     margin: 0px;
     padding: 0px;
+    overflow: hidden;
+    img {
+      display: block;
+      margin: 0px;
+      padding: 0px;
+      min-height: 100%;
+      min-width: 100%;
+      align-self: center;
+    }
   }
   .card-text-area {
     @extend .z-depth-1;
     box-sizing: border-box;
+    display: block;
     transition: none;
-    * {
+    > * {
+      display: block;
       transition: none;
     }
     > * {
@@ -29,39 +42,28 @@ $card-action-padding: 8px !default;
       @include side-margin(16px);
     }
     > *:first-child {
-      margin-top: 0px;
-      padding-top: 24px;
+      margin-top: 24px;
     }
     > *:last-child {
-      margin-bottom: 0px;
-      padding-bottom: 24px;
+      margin-bottom: 24px;
     }
     > *:only-child {
-      padding: 16px;
+      @include vertical-margin(24px);
+      padding: 0px;
     }
-    .header {
+    .header, .subheader, .title, h1, h2, h3, h4 {
       @include vertical-margin(12px);
     }
-    .header:first-child {
-      margin-top: 0px;
+    .header + .header, .header + .subheader, .header + .title,
+    .title + .title, .title + .subheader,
+    .subheader + .subheader {
+      margin-top: -12px;
     }
-    .header:last-child {
-      margin-bottom: 0px;
+    .header:first-child, .subheader:first-child {
+      margin-top: 16px;
     }
-    .header:only-child {
-      @include vertical-margin(0px);
-    }
-    .subheader {
-      @include vertical-margin(12px);
-    }
-    .subheader:first-child {
-      margin-top: 0px;
-    }
-    .subheader:last-child {
-      margin-bottom: 0px;
-    }
-    .header:only-child {
-      @include vertical-margin(0px);
+    .header:last-child, .subheader:last-child {
+      margin-bottom: 16px;
     }
   }
   .card-action-area {
