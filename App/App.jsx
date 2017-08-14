@@ -56,8 +56,8 @@ class App extends React.Component {
               <TabList style={{width: '50%'}} setActiveTabKey={this.setActiveKey}>
                 <Tab tabKey={1}>Test1</Tab>
                 <Tab tabKey={2}
-                      onMouseEnter={() => this.setMenuActive(true)}
-                      onMouseLeave={() => this.setMenuActive(false)}>
+                      onMouseEnter={() => {this.setMenuActive(true);}}
+                      onMouseLeave={(event) => {console.log('hi'); this.setMenuActive(false); }}>
                   Test2
                   <Menu active={this.state.menuActive}
                         setActive={this.setMenuActive}

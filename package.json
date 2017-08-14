@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3",
-    "guac-hoc": "0.0.24",
+    "guac-hoc": "0.0.25",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-flexbox-grid": "^1.1.3",
