@@ -6,6 +6,17 @@
   * {
     transition: none;
   }
+  display: flex;
+  flex: 0 1 auto;
+}
+
+.yui-md-grid-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.yui-md-grid-col {
+  flex-direction: column;
 }
 
 $xs-grid-query: 'only screen and (max-width: 480px)';
