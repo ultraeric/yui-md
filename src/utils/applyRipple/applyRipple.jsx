@@ -125,7 +125,7 @@ function applyRipple(WrappedComponent, defaultOptions = {}) {
     renderRipple(rippleCoords, rippleSize) {
       let rippleComponents = this.state.rippleComponents;
       let rippleDuration = 3 * getAnimationTimeBySize(rippleSize);
-      rippleComponents.push(<span style={{left: rippleCoords.x,
+      rippleComponents.push(<div style={{left: rippleCoords.x,
                                           top: rippleCoords.y,
                                           width: rippleSize,
                                           height: rippleSize,
