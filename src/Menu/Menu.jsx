@@ -100,6 +100,7 @@ class Menu extends React.Component {
     globalMenus.delete(this);
   }
 
+
   render() {
     let passedProps = this.deleteUsedProps(['active', 'setActive', 'position', 'expand', 'dense', 'fastExpand']);
 
