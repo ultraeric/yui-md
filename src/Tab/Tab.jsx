@@ -58,6 +58,7 @@ class Tab extends React.Component {
       } else {
         if (this.props.activeTabKey !== this.props.tabKey) {
           this.props.setActiveTabKey(this.props.tabKey);
+          this.props.setActiveID(this.props.intID);
         }
       }
     } else {
@@ -73,6 +74,7 @@ class Tab extends React.Component {
         typeof(this.props.activeEvent) === 'undefined') {
       this.setActive();
     }
+    event.persist();
     if (!event.target.className.includes('tab')) {
       event.stopPropagation();
     }

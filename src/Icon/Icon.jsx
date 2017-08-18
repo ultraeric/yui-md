@@ -30,12 +30,12 @@ class Icon extends React.Component {
       ...passedProps,
       className: this.className(),
       style: this.style()
-    }
+    };
 
     return (
-      <i {...passedProps}>
+      <div {...passedProps}>
         {this.props.children}
-      </i>
+      </div>
     );
   }
 }

@@ -52,16 +52,16 @@ function applyRipple(WrappedComponent, defaultOptions = {}) {
       if (((typeof this.props.ripple === 'undefined') || this.props.ripple)
           && ((defaults.rippleFilter && defaults.rippleFilter(...arguments) || !defaults.rippleFilter))) {
         event.persist();
-        setTimeout(() => this.startRipple(event), 0);
+        this.startRipple(event);
       }
     }
 
     onMouseUp(event) {
-        setTimeout(() => this.stopRipple(event), 0);
+        this.stopRipple(event);
     }
 
     onMouseLeave(event) {
-        setTimeout(() => this.stopRipple(event), 0);
+        this.stopRipple(event);
     }
 
     //Called on click
@@ -74,14 +74,13 @@ function applyRipple(WrappedComponent, defaultOptions = {}) {
     }
 
     stopRipple(event) {
-      let rippleComponents = [...this.state.rippleComponents];
+      let rippleComponents = this.state.rippleComponents;
       if (rippleComponents.length === 0) {
         return;
       }
-      let rippleComponent = rippleComponents.pop();
-      rippleComponent = React.cloneElement(rippleComponent, {className: this.rippleClassName() + ' ripple-fade'});
-      rippleComponents.push(rippleComponent);
-      this.setState({rippleComponents: rippleComponents});
+      let rippleComponent = rippleComponents[rippleComponents.length - 1];
+      rippleComponents[rippleComponents.length - 1] = React.cloneElement(rippleComponent, {className: this.rippleClassName() + ' ripple-fade'});
+      window.requestAnimationFrame(() => this.setState({rippleComponents: rippleComponents}));
     }
 
     //Gets DOM Node of container and returns max of its width and height
@@ -134,7 +133,7 @@ function applyRipple(WrappedComponent, defaultOptions = {}) {
                                   key={this.index}/>);
       rippleComponents = rippleComponents.slice(this.numToRemove, rippleComponents.length);
       this.numToRemove = 0;
-      this.setState({rippleComponents: rippleComponents});
+      setTimeout(() => this.setState({rippleComponents: rippleComponents}), 0);
       this.index += 1;
       setTimeout(() => this.numToRemove += 1, (rippleDuration) * 1000);
     }

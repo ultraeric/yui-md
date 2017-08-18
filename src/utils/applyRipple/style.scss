@@ -1,11 +1,9 @@
 @keyframes ripple-animation {
   0% {
     transform: scale(0);
-    opacity: 0.2;
   }
 
   100% {
-    opacity: 0.2;
     transform: scale(4);
   }
 }

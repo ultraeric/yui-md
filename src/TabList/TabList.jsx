@@ -45,13 +45,13 @@ class TabList extends React.PureComponent {
     let style = {
       top: this.domNode.offsetTop + this.domNode.offsetHeight - 3 + 'px',
       left: 'calc(' + this.calcTabWidthRatio(numShownTabs) + ' * ' + activeID + ')',
-      width: this.calcTabWidthRatio(numShownTabs)
+      width: 'calc(' + this.calcTabWidthRatio(numShownTabs) + ')'
     }
     return style;
   }
 
   calcTabWidthRatio(numShownTabs) {
-    return 'calc(100% / ' + numShownTabs + ')';
+    return '100% / ' + numShownTabs;
   }
 
   calcActiveBoxClassName() {
@@ -74,7 +74,7 @@ class TabList extends React.PureComponent {
         newChild = React.cloneElement(children[i], {intID: i,
                                                       activeID: this.state.activeID,
                                                       setActiveID: this.setActiveID,
-                                                      style: {width: this.calcTabWidthRatio(numShownTabs)},
+                                                      style: {width: 'calc(' + this.calcTabWidthRatio(numShownTabs) + ')'},
                                                       activeEvent: this.props.activeEvent,
                                                       activeTabKey: this.props.activeTabKey,
                                                       setActiveTabKey: this.props.setActiveTabKey,
@@ -91,7 +91,7 @@ class TabList extends React.PureComponent {
       ...passedProps,
       className: this.className(),
       id: this.tabListID
-    }
+    };
 
     return (
       <div {...passedProps}>
