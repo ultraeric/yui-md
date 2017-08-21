@@ -10,8 +10,8 @@
     "deploy": "npm run prepare && webpack -w && node server.js",
     "watch": "babel -w src -d lib --copy-files"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "ultraeric",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.15.3",
     "guac-hoc": "0.0.25",
