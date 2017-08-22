@@ -13,7 +13,7 @@ let globalMenus = new Set();
 
 function refreshMenus(event) {
   for (var menu of globalMenus) {
-    setTimeout(() => menu.checkShouldClose(event), 0);
+    setTimeout((function(menu) {return () => menu.checkShouldClose(event);})(menu), 0);
   }
 }
 
@@ -89,8 +89,6 @@ class Menu extends React.Component {
     let boundingBox = this.DOMNode.getBoundingClientRect();
     if (this.checkOutsideBoundingBox(boundingBox, event.clientX, event.clientY) &&
         this.checkOutsideBoundingBox(parentBoundingBox, event.clientX, event.clientY)) {
-        console.log('close');
-        console.log(this.props.setActive);
         this.props.setActive && this.props.setActive(false);
         return true;
     } else {
