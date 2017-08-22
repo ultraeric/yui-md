@@ -94,6 +94,12 @@ function createButton(options = defaultOptions) {
       return this.props.label || null;
     }
 
+    onClick(event) {
+      event.persist();
+      this.props.onClick && this.props.onClick(event);
+      event.stopPropagation();
+    }
+
     render() {
       //Guac-HOC doesn't delete when type is falsey, i.e. 0, '', [], etc.
       let passedProps = this.deleteUsedProps(['rippleComponents', 'intId', 'activeId',
@@ -101,7 +107,8 @@ function createButton(options = defaultOptions) {
                                               'depth', 'centerRipple']);
       passedProps = {
         ...passedProps,
-        className: this.className()
+        className: this.className(),
+        onClick: this.onClick
       };
 
       return (

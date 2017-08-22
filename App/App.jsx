@@ -15,6 +15,7 @@ import Divider from '../lib/Divider';
 import AppBar from '../lib/AppBar';
 import Snackbar from '../lib/Snackbar';
 import {Row, Col, StickyFooter} from '../lib';
+import provideWindowSize from '../lib/utils/provideWindowSize';
 
 class App extends React.Component {
   constructor() {

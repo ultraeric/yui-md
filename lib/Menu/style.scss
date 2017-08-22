@@ -1,15 +1,17 @@
-.menu {
+*.menu {
   @extend .z-depth-1;
   @include vertical-padding(8px);
-  top: 0;
-  left: 0;
+
   min-width: 100%;
   background-color: #ffffff;
 
+  border-radius: initial;
   margin-bottom: 8px;
   vertical-align: middle;
   transition: all $standard-time $standard-transition-curve;
   * {
+    margin: 0px;
+    border-radius: initial;
     text-overflow: clip;
     white-space: nowrap;
     transition: all $standard-time $standard-transition-curve;
@@ -38,22 +40,13 @@
 }
 
 .menu.hidden.expand-vertical {
-  transform: translateY(-50%) scaleY(0);
-  * {
-    transform: translateY(-50%) scaleY(0);
-  }
+  transform: scaleY(0);
 }
 
 .menu.hidden.expand-horizontal {
-  transform: translateX(-50%) scaleX(0);
-  * {
-    transform: translateX(-50%) scaleX(0);
-  }
+  transform: scaleX(0);
 }
 
 .menu.hidden.expand-both {
-  transform: translateX(-50%) translateY(-50%) scale(0);
-  * {
-    transform: translateX(-50%) translateY(-50%) scale(0);
-  }
+  transform: scale(0);
 }

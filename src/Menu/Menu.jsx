@@ -24,6 +24,7 @@ document.addEventListener('click', (event) => setTimeout(refreshMenus(event), 0)
     - active <boolean>: whether or not to show the menu.
     - setActive(boolean) <function>: function to call to set visibility.
     - dense <boolean>: dense layout or not.
+    - anchor <string>: anchor corner of menu. <'top', 'bottom'> + <'left', 'right'>
     - position <string>: anchor position of menu on parent Component. <'top', 'bottom'> + <'left', 'right'>
     - expand <string>: expansion direction of menu. 'horizontal' or 'vertical';
     - fastExpand <boolean>: expand quickly or not.
@@ -55,16 +56,19 @@ class Menu extends React.Component {
   style() {
     let style = {};
     let position = this.props.position || '';
+    let verticalAnchor = this.props.anchor.includes('bottom') ? 'bottom' : 'top';
+    let horizontalAnchor = this.props.anchor.includes('right') ? 'right' : 'left';
     if (position.includes('top')) {
-      style.top = '0px';
+      style[verticalAnchor] = verticalAnchor === 'top' ? '0px' : '100%';
     } else if (position.includes('bottom')) {
-      style.top = '100%';
+      style[verticalAnchor] = verticalAnchor === 'bottom' ? '0px' : '100%';
     }
     if (position.includes('left')) {
-      style.left = '0px';
+      style[horizontalAnchor] = horizontalAnchor === 'left' ? '0px' : '100%';
     } else if (position.includes('right')) {
-      style.left = '100%';
+      style[horizontalAnchor] = horizontalAnchor === 'right' ? '0px' : '100%';
     }
+    style.transformOrigin = this.props.anchor;
     style.position = 'absolute';
     return style;
   }
@@ -85,6 +89,8 @@ class Menu extends React.Component {
     let boundingBox = this.DOMNode.getBoundingClientRect();
     if (this.checkOutsideBoundingBox(boundingBox, event.clientX, event.clientY) &&
         this.checkOutsideBoundingBox(parentBoundingBox, event.clientX, event.clientY)) {
+        console.log('close');
+        console.log(this.props.setActive);
         this.props.setActive && this.props.setActive(false);
         return true;
     } else {
@@ -102,7 +108,7 @@ class Menu extends React.Component {
 
 
   render() {
-    let passedProps = this.deleteUsedProps(['active', 'setActive', 'position', 'expand', 'dense', 'fastExpand']);
+    let passedProps = this.deleteUsedProps(['active', 'setActive', 'position', 'expand', 'dense', 'fastExpand', 'anchor']);
 
     let children = React.Children.toArray(this.props.children);
     let numShownTabs = children.length;
@@ -134,7 +140,8 @@ class Menu extends React.Component {
 }
 
 Menu.defaultProps = {
-  position: 'bottom',
+  position: 'bottom left',
+  anchor: 'top left',
   expand: 'both',
   dense: true
 }

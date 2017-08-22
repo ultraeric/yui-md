@@ -1,4 +1,15 @@
 .button {
+  * {
+    cursor: default;
+    border-radius: inherit;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px;
+    text-transform: default;
+  }
+}
+
+*.button {
   @extend .has-nav-text;
 
   @include vertical-padding($content-padding);
@@ -17,14 +28,7 @@
   color: $text-color-dark;
 
   transition: all $standard-time $standard-transition-curve;
-
-  * {
-    border-radius: inherit;
-    text-align: center;
-    vertical-align: middle;
-    padding: 0px;
-    text-transform: none;
-  }
+  cursor: default;
 }
 
 .button:focus {
