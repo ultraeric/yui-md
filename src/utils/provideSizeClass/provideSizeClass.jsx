@@ -18,11 +18,14 @@ function provideSizeClass(WrappedComponent) {
     //Gets the size class based on common cutoffs (980, 480 px)
     getSizeClass(size) {
       // size = (size.width < size.height) ? size : {width: size.height, height: size.width};
+      if (!size.width || !size.height) {
+        return 'noClassSize';
+      }
       if (size.width >= 980) {
         return 'l';
       } else if (size.width >= 480) {
         return 'm';
-      } else {
+      } else if (size.width < 480){
         return 's';
       }
     }
