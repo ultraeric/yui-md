@@ -83,3 +83,19 @@ body {
 .justified {
   text-align: justify;
 }
+
+a:link {
+  color: darken($accent-color, 4%);
+}
+
+a:visited {
+  color: darken($accent-color-dark, 4%);
+}
+
+a:hover {
+  color: darken($accent-color-light, 4%);
+}
+
+a:active {
+  color: darken($accent-color, 4%);
+}
