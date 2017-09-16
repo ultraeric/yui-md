@@ -7,6 +7,7 @@ import Drawer from '../lib/Drawer';
 import Content from '../lib/Content';
 import Card from '../lib/Card';
 import Icon from '../lib/Icon';
+import Input from '../lib/Input';
 import TabList from '../lib/TabList';
 import Tab from '../lib/Tab';
 import Menu from '../lib/Menu';
@@ -80,6 +81,7 @@ class App extends React.Component {
                 <Col sm={6}>Hi3</Col>
                 <Col sm={6}>LONG TEXT LONG TEXT LONG TEXT LONG TEXT LONG TEXT LONG TEXT </Col>
               </Row>
+              <Input label="ASDF">Hi</Input>
               <StickyFooter raised>Hello Sticky Footer!</StickyFooter>
           </Content>
           <Drawer active={this.state.drawerActive}
