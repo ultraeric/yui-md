@@ -30,6 +30,7 @@ input[type=text]:focus {
 }
 
 label.text-input-label {
+  margin-top: 16px;
   font-size: 12px;
   transition: all $standard-time $standard-transition-curve;
 }

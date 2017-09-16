@@ -20,8 +20,9 @@ class Input extends React.Component {
     };
     return (
       <div>
-        <label className="text-input-label">{this.props.label}</label>
-        <input type="text" {...passedProps}>
+        <div style={{height: '12px'}}/>
+        <label className='text-input-label'>{this.props.label}</label>
+        <input type='text' {...passedProps}>
           {this.props.value}
         </input>
       </div>
