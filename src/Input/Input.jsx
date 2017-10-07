@@ -37,6 +37,7 @@ class Input extends React.Component {
 
 /*
   Props:
+  - label <string>
   - options <object>
   - selected <string>: key of the selected option
   - setSelected <function<key>>: function that changes which key is selected
@@ -71,6 +72,7 @@ class Dropdown extends React.Component {
     return (
       <div>
         <div style={{height: '12px'}}/>
+        <label className='text-input-label'>{this.props.label}</label>
         <select name='dropdown' value={this.props.selected} onChange={this.onChange}>
           {this.getOptionComponents(this.props.options, this.props.selected)}
         </select>
