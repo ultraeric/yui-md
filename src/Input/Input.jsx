@@ -5,12 +5,17 @@ import Guac from 'guac-hoc/lib/Guac';
   Props:
   - label <string>: label
   - value <string>: value of input
+  - changeValue <function<string>>: function that changes value
 */
 
 class Input extends React.Component {
   constructor() {
     super();
     this.bindAllMethods();
+  }
+
+  onChange(event) {
+    this.props.changeValue(event.target.value);
   }
 
   render() {
