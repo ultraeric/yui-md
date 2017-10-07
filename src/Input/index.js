@@ -1,4 +1,4 @@
-import {Input} from './Input';
+import {Input, Dropdown} from './Input';
 
 export default Input;
-export {Input};
+export {Input, Dropdown};

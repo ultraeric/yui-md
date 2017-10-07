@@ -121,9 +121,6 @@ class Drawer extends React.Component {
 
   overlayStyle() {
     let style = {};
-    if (this.state.drawerType !== 'temporary') {
-      style.zIndex = 0;
-    }
     return style;
   }
 

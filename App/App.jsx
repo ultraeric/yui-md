@@ -7,7 +7,7 @@ import Drawer from '../lib/Drawer';
 import Content from '../lib/Content';
 import Card from '../lib/Card';
 import Icon from '../lib/Icon';
-import Input from '../lib/Input';
+import {Input, Dropdown} from '../lib/Input';
 import TabList from '../lib/TabList';
 import Tab from '../lib/Tab';
 import Menu from '../lib/Menu';
@@ -26,7 +26,12 @@ class App extends React.Component {
     this.state = {
       drawerActive: false,
       menuActive: false,
-      activeTabKey: 1
+      activeTabKey: 1,
+      options: {
+        asdf: 'test1',
+        asdf2: 'test2'
+      },
+      selected: 'asdf'
     };
   }
 
@@ -44,6 +49,10 @@ class App extends React.Component {
 
   setActiveKey(key) {
     this.setState({activeTabKey: key});
+  }
+
+  changeSelected(key) {
+    this.setState({selected: key});
   }
 
   render() {
@@ -82,6 +91,7 @@ class App extends React.Component {
                 <Col sm={6}>LONG TEXT LONG TEXT LONG TEXT LONG TEXT LONG TEXT LONG TEXT </Col>
               </Row>
               <Input label="ASDF">Hi</Input>
+              <Dropdown options={this.state.options} selected={this.state.selected} setSelected={this.changeSelected}></Dropdown>
               <StickyFooter raised>Hello Sticky Footer!</StickyFooter>
           </Content>
           <Drawer active={this.state.drawerActive}
