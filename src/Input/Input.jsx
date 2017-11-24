@@ -44,7 +44,6 @@ class Input extends React.Component {
 class Dropdown extends React.Component {
   constructor() {
     super();
-    console.log('asdf');
     this.bindAllMethods();
   }
 

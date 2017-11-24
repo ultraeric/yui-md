@@ -30,13 +30,13 @@
 
 .tab.important.active {
   opacity: 1;
-  color: $accent-color-dark;
+  color: $accent-color;
 }
 
 .tab.important.tab:hover {
   transition: all $standard-time $standard-transition-curve;
   opacity: 1;
-  color: $accent-color-dark;
+  color: $accent-color;
   cursor: pointer;
 }
 
