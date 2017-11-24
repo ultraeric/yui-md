@@ -90,7 +90,7 @@ class App extends React.Component {
                 <Col sm={6}>Hi3</Col>
                 <Col sm={6}>LONG TEXT LONG TEXT LONG TEXT LONG TEXT LONG TEXT LONG TEXT </Col>
               </Row>
-              <Input label="ASDF">Hi</Input>
+              <Input label="ASDF"></Input>
               <Dropdown options={this.state.options} selected={this.state.selected} setSelected={this.changeSelected}></Dropdown>
               <StickyFooter raised>Hello Sticky Footer!</StickyFooter>
           </Content>
