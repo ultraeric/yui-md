@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as utils from 'guac-hoc/lib/utils';
-import '../styles/style.scss';
 
 import applyRipple from '../utils/applyRipple';
 import Guac from 'guac-hoc/lib/Guac';

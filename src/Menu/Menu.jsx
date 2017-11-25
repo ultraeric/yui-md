@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import '../styles/style.scss';
 import Guac from 'guac-hoc/lib/Guac';
 import MenuItem from '../MenuItem';
 

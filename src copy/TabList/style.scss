@@ -1,0 +1,20 @@
+.tab-list {
+  z-index: 1000;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  @media #{$desktop-query} {
+    @include side-margin(80px);
+  }
+}
+
+.indicator {
+  display: inline-block;
+  position: absolute;
+  background-color: $accent-color;
+  height: 3px;
+  transition: all $standard-time $standard-transition-curve;
+  overflow: active;
+  pointer-events: none;
+}

@@ -1,0 +1,37 @@
+.divider {
+  background-color: rgba($text-color-dark, 0.12);
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  background-clip: content-box;
+}
+
+.divider.horizontal {
+  @include vertical-margin($content-padding);
+  height: 1px;
+}
+
+.divider.vertical {
+  @include side-margin($content-padding);
+  width: 1px;
+  height: inherit;
+  display: inline-block;
+}
+
+.divider.no-margin {
+  margin: 0px;
+}
+.divider.no-margin.vertical {
+  height: 100%;
+}
+.divider.no-margin.horizontal {
+  width: 100%;
+}
+
+.divider.inset {
+  padding-left: 72px;
+  box-sizing: border-box;
+}
+.divider.inset:not(.no-margin) {
+  padding-right: 72px;
+}

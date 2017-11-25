@@ -1,0 +1,49 @@
+.menu-item.important {
+  float: left;
+  font-weight: normal;
+  text-align: left;
+  min-width: 150px;
+  margin: 0px;
+  width: 100%;
+  background-color: inherit;
+  box-sizing: border-box;
+  text-transform: none;
+
+  @include vertical-padding($content-padding);
+  vertical-align: middle;
+  padding-left: 16px;
+  height: 48px;
+  font-size: 16px;
+  line-height: calc(48px - 2 * #{$content-padding});
+
+  @media #{$desktop-query} {
+    padding-left: 24px;
+    height: 32px;
+    font-size: 15px;
+    line-height: calc(32px - 2 * #{$content-padding});
+  }
+}
+
+.menu-item.important:hover {
+  color: $accent-color-dark;
+}
+
+.menu-item.important.dense {
+  @include vertical-padding($content-padding);
+  vertical-align: middle;
+  padding-left: 16px;
+  height: 32px;
+  font-size: 14px;
+  line-height: calc(32px - 2 * #{$content-padding});
+
+  @media #{$desktop-query} {
+    @include vertical-padding(4px);
+    height: 24px;
+    font-size: 13px;
+    line-height: calc(24px - 2 * 4px);
+  }
+}
+
+.menu-item.important.sub-item {
+  padding-left: 64px;
+}

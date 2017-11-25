@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../styles/style.scss';
 import {Guac} from 'guac-hoc/lib/Guac';
 import {applyRipple} from '../utils/applyRipple';
 import {Icon} from '../Icon';

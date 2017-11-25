@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import '../../styles/style.scss';
 import {getAnimationTimeBySize} from '../timingUtils';
 import Hoc from 'guac-hoc/lib/Hoc';
 

@@ -3,7 +3,6 @@ import utils from 'guac-hoc/lib/utils';
 import provideSizeClass from '../utils/provideSizeClass';
 import Guac from 'guac-hoc/lib/Guac';
 import StickyFooter from '../StickyFooter';
-import '../styles/style.scss';
 
 /*
   Props:

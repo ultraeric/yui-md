@@ -1,0 +1,56 @@
+@keyframes ripple-animation {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(4);
+  }
+}
+
+@keyframes ripple-fade {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ripple-parent {
+  pointer-events: none;
+  overflow: hidden;
+  position: absolute;
+  border-radius: inherit;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ripple-container {
+  position: relative;
+}
+
+.ripple-active {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  background-color: $ripple-color;
+  pointer-events: none;
+}
+
+.ripple-effect {
+  @extend .ripple-active;
+  transform: scale(4);
+  animation: ripple-animation 1s $decel-transition-curve;
+}
+
+.ripple-effect.ripple-fade {
+  opacity: 0;
+  animation: ripple-animation 1s $decel-transition-curve, ripple-fade 2s $decel-transition-curve;
+}
+
+.ripple-effect.light {
+  background-color: $text-color-light;
+}

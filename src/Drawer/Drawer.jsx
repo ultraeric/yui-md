@@ -3,8 +3,6 @@ import Guac from 'guac-hoc/lib/Guac';
 import provideSizeClass from '../utils/provideSizeClass';
 import Overlay from '../Overlay';
 
-import '../styles/style.scss';
-
 /*
   NOTE: There should only be a single navigational drawer in your application.
   To render different information in your drawer, it is best to create several

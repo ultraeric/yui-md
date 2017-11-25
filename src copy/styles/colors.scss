@@ -1,0 +1,43 @@
+$primary-color: #00bcd4 !default;
+$primary-color-light: #62efff !default;
+$primary-color-dark: #008ba3 !default;
+
+$secondary-color: #fafafa !default;
+$secondary-color-light: #ffffff !default;
+$secondary-color-dark: #c7c7c7 !default;
+
+$tertiary-color: #03a9f4 !default;
+$tertiary-color-light: #67daff !default;
+$tertiary-color-dark: #007ac1 !default;
+
+$accent-color: #ffd740 !default;
+$accent-color-light: #ffff74 !default;
+$accent-color-dark: #c8a600 !default;
+
+$text-color-dark: rgba(#263238, 0.9) !default;
+$text-color-light: rgba(#eceff1, 0.9) !default;
+
+$icon-color-dark-active: rgba($text-color-dark, 0.7) !default;
+$icon-color-dark-disabled: rgba($text-color-dark, 0.46) !default;
+
+$ripple-color: $text-color-dark !default;
+
+$shadow-color: $text-color-dark !default;
+$shadow-color-light: $text-color-light !default;
+$border-color: #cfd8dc !default;
+
+$shade-color-dark: rgba($text-color-dark, 0.12);
+
+$text-color-subheader: rgba($text-color-dark, 0.54);
+
+.primary {
+  background-color: $primary-color;
+}
+
+.secondary {
+  background-color: $secondary-color;
+}
+
+.accent {
+  accent-color: $accent-color;
+}

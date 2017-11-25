@@ -1,0 +1,46 @@
+.tab.important {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+
+  @extend .has-nav-text;
+  @include side-padding(12px);
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  user-select: none;
+  height: 48px;
+  line-height: 48px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: rgba($text-color-dark, 0.6);
+  transition: background-color 0s;
+
+  transition: all $standard-time $standard-transition-curve;
+
+  > * {
+    text-align: center;
+  }
+
+  @media #{desktop-query} {
+    @include side-padding(24px);
+    font-size: 13px;
+  }
+}
+
+.tab.important.active {
+  opacity: 1;
+  color: $accent-color;
+}
+
+.tab.important.tab:hover {
+  transition: all $standard-time $standard-transition-curve;
+  opacity: 1;
+  color: $accent-color;
+  cursor: pointer;
+}
+
+.tab.important.tab:focus {
+  border: none;
+  outline: none;
+}
