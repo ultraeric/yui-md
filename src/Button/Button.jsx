@@ -45,7 +45,7 @@ function createButton(options = defaultOptions) {
     }
 
     style() {
-      let style = (this.props.style && {this.props.style...}) || {};
+      let style = (this.props.style && {...this.props.style}) || {};
       if (this.props.colors) {
         if (this.props.colors.color) {
           style.color = this.props.colors.color;
