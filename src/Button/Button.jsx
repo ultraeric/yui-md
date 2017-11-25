@@ -45,7 +45,7 @@ function createButton(options = defaultOptions) {
     }
 
     style() {
-      let style = {};
+      let style = (this.props.style && {this.props.style...}) || {};
       if (this.props.colors) {
         if (this.props.colors.color) {
           style.color = this.props.colors.color;
@@ -111,12 +111,11 @@ function createButton(options = defaultOptions) {
       let passedProps = this.deleteUsedProps(['rippleComponents', 'intId', 'activeId',
                                               'active', 'circle', 'iconOnly', 'large',
                                               'depth', 'centerRipple']);
-      let style = {...style, ...this.style()};
       passedProps = {
         ...passedProps,
         className: this.className(),
         onClick: this.onClick,
-        style: style
+        style: this.style()
       };
 
       return (

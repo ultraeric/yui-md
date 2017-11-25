@@ -2,6 +2,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Guac from 'guac-hoc/lib/Guac';
 
+import './style.scss';
+
 import {Button, IconButton, FloatingActionButton} from '../lib/Button';
 import Drawer from '../lib/Drawer';
 import Content from '../lib/Content';
