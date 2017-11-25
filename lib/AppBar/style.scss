@@ -24,16 +24,27 @@
 
   .header-content {
     box-sizing: border-box;
-    padding-left: $app-padding-left;
     width: 100%;
+    padding-left: $app-padding-left-mobile;
   }
 
   .header-content.prominent {
     padding-top: 56px;
     height: 72px;
-    padding-left: $app-padding-left;
     width: 100%;
   }
+
+  @media #{$tablet-query} {
+    .header-content {
+      padding-left: $app-padding-left-tablet;
+    }
+  }
+  @media #{$desktop-query} {
+    .header-content {
+      padding-left: $app-padding-left;
+    }
+  }
+
 }
 
 .app-bar.prominent {

@@ -1,5 +1,3 @@
-
-
 $small-margin: 8px !default;
 
 $content-padding: 8px !default;
@@ -19,7 +17,9 @@ $mobile-query: 'only screen and (max-width: 480px)';
 $tablet-query: 'only screen and (min-width: 480px) and (max-width: 980px)';
 $desktop-query: 'only screen and (min-width: 980px)';
 
-$app-padding-left: 72px;
+$app-padding-left: 48px;
+$app-padding-left-tablet: 36px;
+$app-padding-left-mobile: 24px;
 
 @mixin side-margin($margin) {
   margin-right: $margin;
