@@ -33,7 +33,7 @@ class AppBar extends React.Component {
 
   style() {
     let style = {marginLeft: this.state.drawerPadding,
-                  height: this.getHeight()};
+                  minHeight: this.getHeight()};
     if (this.props.backgroundColor) {
       style.backgroundColor = this.props.backgroundColor;
     }

@@ -112,12 +112,14 @@ class Tab extends React.Component {
     let passedProps = this.deleteUsedProps(['children', 'setActiveID', 'intID', 'activeID',
                                             'rippleComponents', 'activeEvent', 'activeTabKey',
                                             'setActiveTabKey', 'tabKey', 'tabKeyIDMap']);
+    this.props.style.boxSizing = 'border-box'
     passedProps = {
       ...passedProps,
       className: this.className(),
       ref: (node) => this.refNode = node,
       onClick: this.onClick,
-      onMouseOver: this.onMouseOver
+      onMouseOver: this.onMouseOver,
+      style: this.props.style
     };
     return (
       <Button {...passedProps} children={this.props.children}>

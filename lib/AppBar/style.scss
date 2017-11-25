@@ -16,7 +16,7 @@
 }
 
 .app-bar-header {
-  height: 56px;
+  min-height: 56px;
   background-color: transparent;
   position: relative;
   display: flex;
@@ -24,7 +24,6 @@
 
   .header-content {
     box-sizing: border-box;
-    position: absolute;
     padding-left: $app-padding-left;
     width: 100%;
   }

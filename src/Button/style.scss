@@ -16,7 +16,6 @@
   @include side-padding(20px);
   position: relative;
   border: none;
-  border-radius: 2px;
   display: inline-block;
   min-height: 36px - 2 * $content-padding;
   min-width: 88px;
@@ -26,9 +25,14 @@
   user-select: none;
 
   color: $text-color-dark;
+  text-transform: capitalize;
 
   transition: all $standard-time $standard-transition-curve;
   cursor: default;
+}
+
+*.button.rounded {
+  border-radius: 2px;
 }
 
 .button:focus {

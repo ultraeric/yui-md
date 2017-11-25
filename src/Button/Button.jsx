@@ -18,7 +18,8 @@ let defaultOptions = {
   circle: false,
   iconOnly: false,
   large: false,
-  depth: 0
+  depth: 0,
+  rounded: true
 };
 
 let iconOptions = {
@@ -54,7 +55,7 @@ function createButton(options = defaultOptions) {
           if (this.props.disabled) {
             style.backgroundColor = 'rgba(' + backgroundColor + ', 0.4615)';
           } else {
-            style.backgroundColor = backgroundColor;
+            style.backgroundColor = this.props.colors.backgroundColor;
           }
         }
       }
@@ -66,7 +67,8 @@ function createButton(options = defaultOptions) {
       className += this.props.circle ? ' circle' : '';
       className += this.props.iconOnly ? ' icon' : '';
       className += this.props.large ? ' large' : '';
-      className += this.props.disabled ? 'disabled' : '';
+      className += this.props.disabled ? ' disabled' : '';
+      className += this.props.rounded ? ' rounded' : '';
       return className;
     }
 
@@ -96,7 +98,12 @@ function createButton(options = defaultOptions) {
 
     onClick(event) {
       event.persist();
-      this.props.onClick && this.props.onClick(event);
+      if (this.props.artificialDelay) {
+        setTimeout(() => (this.props.onClick && this.props.onClick(event)),
+        this.props.artificialDelay);
+      } else {
+        this.props.onClick && this.props.onClick(event);
+      }
       event.stopPropagation();
     }
 
@@ -105,10 +112,12 @@ function createButton(options = defaultOptions) {
       let passedProps = this.deleteUsedProps(['rippleComponents', 'intId', 'activeId',
                                               'active', 'circle', 'iconOnly', 'large',
                                               'depth', 'centerRipple']);
+      let style = {...style, ...this.style()};
       passedProps = {
         ...passedProps,
         className: this.className(),
-        onClick: this.onClick
+        onClick: this.onClick,
+        style: style
       };
 
       return (
@@ -135,6 +144,9 @@ function createButton(options = defaultOptions) {
   - colors <object>: custom colors.
     - color: text color.
     - backgroundColor: background color
+    - borderColor: border color
+  - rounded <boolean>: rounded or not.
+  - artificialDelay <int>: ms for artificial delay
 */
 let Button = createButton();
 let IconButton = createButton(iconOptions);
