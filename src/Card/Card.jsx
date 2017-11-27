@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Guac from 'guac-hoc/lib/Guac';
 import Row from '../Row';
+import Col from '../Col';
 
 const defaultDepth = 1;
 
@@ -10,6 +11,9 @@ const defaultDepth = 1;
   - vertical <boolean>: vertical card
   - imageArea <Component>: singular image component to render.
   - textArea <Component>: singular text component to render.
+  - depth <int>: depth of component.
+  - rounded <boolean>: whether or not corners are rounded.
+  - picSize <int>: int/12 for ratio of card picture should take up.
 */
 class Card extends React.Component {
   constructor() {
@@ -18,7 +22,10 @@ class Card extends React.Component {
   }
 
   className() {
-    return 'card';
+    var className = 'card';
+    className += ' z-depth-' + this.props.depth;
+    className += this.props.rounded ? ' rounded' : '';
+    return className;
   }
 
   getImageAreaComponent() {
@@ -42,7 +49,7 @@ class Card extends React.Component {
   }
 
   render() {
-    let passedProps = this.deleteUsedProps([]);
+    let passedProps = this.deleteUsedProps(['children']);
     passedProps = {
       ...passedProps,
       className: this.className()
@@ -60,6 +67,12 @@ class Card extends React.Component {
 }
 
 Card = Guac(Card);
+Card.defaultProps = {
+  depth: defaultDepth,
+  rounded: true,
+  vertical: true,
+  horizontal: false
+}
 
 export default Card;
 export {Card};

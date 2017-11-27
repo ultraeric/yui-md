@@ -2,9 +2,11 @@ $card-action-padding: 8px !default;
 
 .card {
   @extend .z-depth-1;
-  border-radius: 2px;
   margin: 8px;
   overflow: hidden;
+}
+.card.rounded {
+  border-radius: 2px;
 }
 .card-text-area, .card-image-area {
   width: 100%;
