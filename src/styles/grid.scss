@@ -177,7 +177,7 @@ $lg-grid-query: 'only screen and (min-width: 980px)';
 
 //Region: desktop-grid
 @media #{$lg-grid-query} {
- .yui-md-grid-col.col-lg-1 {  transform: scale(1); width: 100% / 12; }
+ .yui-md-grid-col.col-lg-1 {  transform: scale(1); width: 1 * 100% / 12; }
  .yui-md-grid-col.col-lg-2 {  transform: scale(1); width: 2 * 100% / 12; }
  .yui-md-grid-col.col-lg-3 {  transform: scale(1); width: 3 * 100% / 12; }
  .yui-md-grid-col.col-lg-4 {  transform: scale(1); width: 4 * 100% / 12; }
