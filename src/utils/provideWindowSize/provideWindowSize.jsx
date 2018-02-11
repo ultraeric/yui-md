@@ -58,7 +58,9 @@ function provideWindowSize(WrappedComponent) {
 
     //On mount, adds this component to the set of components to track
     componentWillMount() {
-      componentsToUpdate.add(this);
+      if (!window.isServer) {
+        componentsToUpdate.add(this);
+      }
     }
 
     //On unmount, queues this component for removal during next update
