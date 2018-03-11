@@ -1,0 +1,86 @@
+$card-action-padding: 8px !default;
+
+.card {
+  @extend .z-depth-1;
+  margin: 8px;
+  overflow: hidden;
+}
+.card.rounded {
+  border-radius: 2px;
+}
+.card-text-area, .card-image-area {
+  width: 100%;
+}
+
+.card-content, .card-content.card {
+  overflow: hidden;
+  transition: none;
+  * {
+    transition: none;
+  }
+  .card-image-area{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    :not(img) {
+      flex: 1 0 auto;
+      display: flex;
+      height: 100%;
+      min-height: 100%;
+      min-width: 100%;
+    }
+    img {
+      flex: 1 0 auto;
+      display: block;
+      margin: 0px;
+      max-height: 100%;
+      max-width: 100%;
+      padding: 0px;
+      min-height: 100%;
+      min-width: 100%;
+      align-self: center;
+      object-fit: cover;
+    }
+  }
+  .card-text-area {
+    @extend .z-depth-1;
+    box-sizing: border-box;
+    display: block;
+    transition: none;
+    > * {
+      display: block;
+      transition: none;
+    }
+    > * {
+      @include vertical-margin(16px);
+      @include side-margin(16px);
+    }
+    > *:first-child {
+      margin-top: 24px;
+    }
+    > *:last-child {
+      margin-bottom: 24px;
+    }
+    > *:only-child {
+      @include vertical-margin(24px);
+      padding: 0px;
+    }
+    .header, .subheader, .title, h1, h2, h3, h4 {
+      @include vertical-margin(12px);
+    }
+    .header + .header, .header + .subheader, .header + .title,
+    .title + .title, .title + .subheader,
+    .subheader + .subheader {
+      margin-top: -12px;
+    }
+    .header:first-child, .subheader:first-child {
+      margin-top: 16px;
+    }
+    .header:last-child, .subheader:last-child {
+      margin-bottom: 16px;
+    }
+  }
+  .card-action-area {
+    margin: 8px;
+  }
+}

@@ -1,0 +1,50 @@
+@import '../styles/transitions.scss';
+
+.z-shadow-base {
+  transition: all 2/3 * $standard-time $standard-transition-curve;
+}
+
+.z-depth-0 {
+  @extend .z-shadow-base;
+  box-shadow: none;
+}
+
+.z-depth-1 {
+  @extend .z-shadow-base;
+  box-shadow: 0px 2px 2px 0px rgba($shadow-color,0.28), 0px 3px 1px -2px rgba($shadow-color,0.24), 0px 1px 5px 0.5px rgba($shadow-color,0.32);
+}
+
+.z-depth-2 {
+  @extend .z-shadow-base;
+  box-shadow: 0px 3.5px 4px 0px rgba($shadow-color,0.28), 0px 2px 4px -1px rgba($shadow-color,0.24), 0px 2.5px 9px 0.5px rgba($shadow-color,0.32);
+}
+
+.z-depth-3 {
+  @extend .z-shadow-base;
+  box-shadow: 0px 5px 6px 0px rgba($shadow-color,0.28), 0px 1px 7px -1px rgba($shadow-color,0.24), 0px 4px 13px 0.5px rgba($shadow-color,0.32);
+}
+
+.z-depth-4 {
+  @extend .z-shadow-base;
+  box-shadow: 0px 6.5px 8px 0px rgba($shadow-color,0.28), 0px 0px 10px -1px rgba($shadow-color,0.24), 0px 5.5px 17px 0.5px rgba($shadow-color,0.32);
+}
+
+.z-depth-5 {
+  @extend .z-shadow-base;
+  box-shadow: 0px 8px 10px 0px rgba($shadow-color,0.28), 0px -1px 13px -1px rgba($shadow-color,0.24), 0px 7px 21px 0.5px rgba($shadow-color,0.32);
+}
+
+.z-depth-6 {
+  @extend .z-shadow-base;
+  box-shadow: 0px 9.5px 12px 0px rgba($shadow-color,0.28), 0px -2px 16px -1px rgba($shadow-color,0.24), 0px 8.5px 25px 0.5px rgba($shadow-color,0.32);
+}
+
+.z-depth-7 {
+  @extend .z-shadow-base;
+  box-shadow: 0px 11px 14px 0px rgba($shadow-color,0.28), 0px -3px 19px -1px rgba($shadow-color,0.24), 0px 10px 29px 0.5px rgba($shadow-color,0.32);
+}
+
+.z-depth-8 {
+  @extend .z-shadow-base;
+  box-shadow: 0px 12.5px 16px 0px rgba($shadow-color,0.28), 0px -4px 22px -1px rgba($shadow-color,0.24), 0px 11.5px 33px 0.5px rgba($shadow-color,0.32);
+}

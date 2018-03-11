@@ -1,0 +1,52 @@
+.app-bar {
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 9990;
+  background-color: $primary-color;
+  transition: all $standard-time $standard-transition-curve;
+}
+
+.app-bar.fixed {
+  position: fixed;
+}
+
+.pad-top {
+  height: 24px;
+  background-color: $primary-color-dark;
+}
+
+.app-bar-header {
+  min-height: 56px;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .header-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: $app-padding-left-mobile;
+  }
+
+  .header-content.prominent {
+    padding-top: 56px;
+    height: 72px;
+    width: 100%;
+  }
+
+  @media #{$tablet-query} {
+    .header-content {
+      padding-left: $app-padding-left-tablet;
+    }
+  }
+  @media #{$desktop-query} {
+    .header-content {
+      padding-left: $app-padding-left;
+    }
+  }
+
+}
+
+.app-bar.prominent {
+  height: 128px;
+}

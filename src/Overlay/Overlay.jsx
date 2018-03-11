@@ -44,7 +44,7 @@ class Overlay extends React.Component {
     }
 
     return (
-      <div className={'overlay-container'} style={this.style()}>
+      <div className={'overlay-container ' + (this.props.active ? '' : 'inactive')} style={this.style()}>
         <div className={'overlay-children'}>
           {this.props.children}
         </div>

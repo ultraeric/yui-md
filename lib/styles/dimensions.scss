@@ -1,0 +1,42 @@
+$small-margin: 8px !default;
+
+$content-padding: 8px !default;
+
+//Both Content and Drawer rely on this, so this is here.
+$drawer-s-width: 280px;
+$drawer-m-width: 320px;
+
+$min-width: 300px !default;
+$min-height: 300px !default;
+
+$tablet-min: 480px !default;
+$desktop-min: 980px !default;
+
+//To use: @media ${<query-name>}
+$mobile-query: 'only screen and (max-width: 480px)';
+$tablet-query: 'only screen and (min-width: 480px) and (max-width: 980px)';
+$desktop-query: 'only screen and (min-width: 980px)';
+
+$app-padding-left: 48px;
+$app-padding-left-tablet: 36px;
+$app-padding-left-mobile: 24px;
+
+@mixin side-margin($margin) {
+  margin-right: $margin;
+  margin-left: $margin;
+}
+
+@mixin vertical-margin($margin) {
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+@mixin side-padding($pad) {
+  padding-right: $pad;
+  padding-left: $pad;
+}
+
+@mixin vertical-padding($pad) {
+  padding-top: $pad;
+  padding-bottom: $pad;
+}
