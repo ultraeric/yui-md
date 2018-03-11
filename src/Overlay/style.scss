@@ -38,7 +38,7 @@
   pointer-events: none;
   z-index: 9991;
 }
-.overlay-container.inactive {
+.overlay-container.inactive.fade-children {
   .overlay-children {
     position: absolute;
     z-index: 10001;

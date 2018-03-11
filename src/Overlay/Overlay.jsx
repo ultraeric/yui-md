@@ -11,6 +11,8 @@ let overlayOptions = {
 /*
   Props:
   - ripple <boolean>: whether or not to ripple on overlay click.
+  - active <boolean>: whether the overlay is active or not.
+  - fadeChildren <boolean>: whether to fade out children or not.
 */
 class Overlay extends React.Component {
   constructor() {
@@ -45,7 +47,7 @@ class Overlay extends React.Component {
 
     return (
       <div className={'overlay-container ' + (this.props.active ? '' : 'inactive')} style={this.style()}>
-        <div className={'overlay-children'}>
+        <div className={'overlay-children ' + (this.props.fadeChildren ? 'fade-children' : '')}>
           {this.props.children}
         </div>
         <div {...passedProps}>
