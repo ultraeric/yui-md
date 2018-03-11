@@ -41,7 +41,12 @@
   z-index: 9991;
 }
 .overlay-container.inactive {
-  * {
-    opacity: 0;
+  .overlay-children {
+    position: absolute;
+    z-index: 10001;
+    * {
+      transition: all 1.5 * $standard-time $standard-transition-curve;
+      opacity: 0;
+    }
   }
 }
