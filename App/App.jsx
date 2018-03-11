@@ -95,7 +95,7 @@ class App extends React.Component {
                 <Col sm={6}>LONG TEXT LONG TEXT LONG TEXT LONG TEXT LONG TEXT LONG TEXT </Col>
               </Row>
               <Input label="ASDF"></Input>
-              <Overlay ripple active={this.state.overlayActive}>
+              <Overlay onClick={() => this.setState({overlayActive: false})} ripple active={this.state.overlayActive}>
                 <Card>
                   <CardTextArea>
                     Hi
