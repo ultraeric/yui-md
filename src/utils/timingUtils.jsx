@@ -5,7 +5,7 @@ function getScalingFunc(base, factor){
 }
 
 function getAnimationTimeBySize(s) {
-  return (0.3 + s / 1960);
+  return (0.25 + s / 1960);
 }
 
 export {getScalingFunc, getAnimationTimeBySize};

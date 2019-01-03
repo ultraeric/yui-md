@@ -4,11 +4,11 @@ import provideSizeClass from '../utils/provideSizeClass';
 import Guac from 'guac-hoc/lib/Guac';
 import StickyFooter from '../StickyFooter';
 
-/*
-  Props:
-  - noPadding <boolean>: unpadded content body.
-  - footerComponent <Component>
-*/
+/**
+*  Props:
+*  - noPadding <boolean>: unpadded content body.
+*  - footerComponent <Component>
+**/
 class Content extends React.PureComponent {
   constructor() {
     super();
