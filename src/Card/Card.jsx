@@ -73,7 +73,7 @@ Card.defaultProps = {
   rounded: true,
   vertical: true,
   horizontal: false
-}
+};
 
 export default Card;
 export {Card};

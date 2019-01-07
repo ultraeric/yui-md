@@ -26,9 +26,8 @@ class Input extends React.Component {
 
     return (
       <div>
+        <input type='text' onChange={this.onChange} {...passedProps}/>
         <label className='text-input-label'>{this.props.label}</label>
-        <input type='text' onChange={this.onChange} {...passedProps}>
-        </input>
       </div>
     );
   }

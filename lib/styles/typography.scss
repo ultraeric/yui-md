@@ -70,7 +70,7 @@ small {
 .title {
   margin: 0px;
   font-size: 20px;
-  font-weight: medium;
+  font-weight: bold;
   color: $text-color-dark;
   line-height: 25px;
 }
@@ -89,7 +89,7 @@ small {
   @media #{$desktop-query} {
     font-size: 15px;
   }
-  font-weight: medium;
+  font-weight: bold;
   color: $text-color-subheader;
   line-height: 24px;
 }
