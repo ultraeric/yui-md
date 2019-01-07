@@ -1,6 +1,8 @@
 
 .text-input-label {
   color: $text-color-subheader;
+  display: block;
+  text-align: left;
   font-size: inherit;
 }
 
@@ -13,6 +15,7 @@ input[type=text], select {
   width: 100%;
   font-size: inherit;
   height: inherit;
+  text-align: left;
   border-bottom-width: 2px;
   border-bottom-color: rgba($text-color-subheader, 0.36);
 }

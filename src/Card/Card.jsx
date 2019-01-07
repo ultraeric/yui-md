@@ -25,6 +25,7 @@ class Card extends React.Component {
     var className = 'card';
     className += ' z-depth-' + this.props.depth;
     className += this.props.rounded ? ' rounded' : '';
+    className += this.props.vertical ? ' vertical' : ' horizontal';
     return className;
   }
 

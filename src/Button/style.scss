@@ -5,7 +5,6 @@
     text-align: center;
     vertical-align: middle;
     padding: 0px;
-    text-transform: default;
   }
 }
 
@@ -57,6 +56,9 @@
   padding: 8px;
   height: 40px;
   width: 40px;
+  * {
+    vertical-align: unset;
+  }
 }
 
 .button.icon.large {

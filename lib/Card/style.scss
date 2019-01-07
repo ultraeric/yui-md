@@ -2,6 +2,7 @@ $card-action-padding: 8px !default;
 
 .card {
   @extend .z-depth-1;
+  height: 100%;
   margin: 8px;
   overflow: hidden;
 }
@@ -15,6 +16,7 @@ $card-action-padding: 8px !default;
 .card-content, .card-content.card {
   overflow: hidden;
   transition: none;
+  height: 100%;
   * {
     transition: none;
   }
@@ -47,6 +49,10 @@ $card-action-padding: 8px !default;
     box-sizing: border-box;
     display: block;
     transition: none;
+    position: relative;
+    .card-text-bottom {
+      bottom: 0;
+    }
     > * {
       display: block;
       transition: none;
@@ -84,3 +90,4 @@ $card-action-padding: 8px !default;
     margin: 8px;
   }
 }
+

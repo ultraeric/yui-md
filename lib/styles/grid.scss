@@ -8,6 +8,9 @@
   }
   display: flex;
   flex: 0 1 auto;
+  img {
+    max-width: 100%
+  }
 }
 
 .yui-md-grid-row {

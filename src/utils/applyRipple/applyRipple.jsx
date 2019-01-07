@@ -36,6 +36,7 @@ function applyRipple(WrappedComponent, defaultOptions = {}) {
       this.index = 0;
       //Track the current number of ripples that need to be removed.
       this.numToRemove = 0;
+      this.touchEnded = 0;
       this.state = {
         rippleComponents: []
       }
@@ -53,14 +54,6 @@ function applyRipple(WrappedComponent, defaultOptions = {}) {
         event.persist();
         this.startRipple(event);
       }
-    }
-
-    onMouseUp(event) {
-        this.stopRipple(event);
-    }
-
-    onMouseLeave(event) {
-        this.stopRipple(event);
     }
 
     //Called on click
@@ -132,7 +125,7 @@ function applyRipple(WrappedComponent, defaultOptions = {}) {
                                   key={this.index}/>);
       rippleComponents = rippleComponents.slice(this.numToRemove, rippleComponents.length);
       this.numToRemove = 0;
-      setTimeout(() => this.setState({rippleComponents: rippleComponents}), 0);
+      window.requestAnimationFrame(() => this.setState({rippleComponents: rippleComponents}));
       this.index += 1;
       setTimeout(() => this.numToRemove += 1, (rippleDuration) * 1000);
     }
@@ -144,8 +137,11 @@ function applyRipple(WrappedComponent, defaultOptions = {}) {
         ref: (node) => this.rippleContainerNode = node,
         className: this.className(),
         onMouseDown: this.onMouseDown,
-        onMouseUp: this.onMouseUp,
-        onMouseLeave: this.onMouseLeave
+        onMouseUp: this.stopRipple,
+        onMouseLeave: this.stopRipple,
+        onTouchStart: this.onMouseDown,
+        onTouchEnd: this.stopRipple,
+        onTouchCancel: this.stopRipple
       };
 
       //Container for ripple

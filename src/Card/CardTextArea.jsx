@@ -29,8 +29,33 @@ class CardTextArea extends React.Component {
     );
   }
 }
-
 CardTextArea = Guac(CardTextArea);
 
+class CardTextBottom extends React.Component {
+  constructor() {
+    super();
+    this.bindAllMethods();
+  }
+
+  className() {
+    return 'card-text-bottom';
+  }
+
+  render() {
+    let passedProps = this.deleteUsedProps([]);
+    passedProps = {
+      ...passedProps,
+      className: this.className()
+    };
+    return (
+      <div {...passedProps}>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
+CardTextBottom = Guac(CardTextBottom);
+
 export default CardTextArea;
-export {CardTextArea};
+export {CardTextArea, CardTextBottom};
